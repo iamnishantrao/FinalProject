@@ -1,0 +1,21 @@
+
+
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  height: 40px;
+  background-color: red
+}
+
+.fill_space{
+  flex: 1 1 auto ;
+}
+.fill_space1{
+  flex: 2 ;
+}
+button{
+  color:wheat;
+}
+mat-search-bar{
+  color:wheat;
+} 
