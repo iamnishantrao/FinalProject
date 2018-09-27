@@ -1,0 +1,27 @@
+.card-block
+{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+}
+#card-container
+{
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+}
+mat-card:hover{
+    cursor: pointer;
+    background-color: #F3F0F0   !important;
+}
+mat-card
+{
+    background-color: aqua;
+ height: 180px;
+}
+h1,p{
+    text-align: center;
+}
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}

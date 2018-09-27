@@ -1,0 +1,13 @@
+mat-toolbar {
+    border-radius: 5px;
+}
+
+button {
+    border-radius: 5px;
+    margin: 0px 0px 0px 0px;
+    font-size: 25px;
+}
+
+.spacing {
+    flex: 1;
+}

@@ -1,0 +1,9 @@
+.profile-card {
+    max-width: 30%;
+    margin: auto;
+  }
+  
+  .example-header-image {
+    background-image: url('http://im.rediff.com/news/2009/sep/10nlook1.jpg');
+    background-size: cover;
+  }
