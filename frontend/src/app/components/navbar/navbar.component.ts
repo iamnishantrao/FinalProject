@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: [
+    './navbar.component.css',
+'../../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+  ]
 })
 export class NavbarComponent implements OnInit {
 

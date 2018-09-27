@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule,MatListModule,MatGridListModule,MatDividerModule, MatToolbarModule, MatInputModule, MatFormFieldModule,} from '@angular/material';
-
-//Imports for Material
-import {MatCardModule,MatExpansionModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatButtonModule, MatCheckboxModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
+  MatToolbarModule, MatExpansionModule,
+  MatGridListModule,
+  MatDividerModule, MatFormFieldModule, MatMenuModule, MatIconModule, MatProgressSpinnerModule, MatListModule
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -14,19 +16,23 @@ import { ProfilepageComponent } from './components/profilepage/profilepage.compo
 import { TrialComponent } from './components/trial/trial.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { FormsModule } from '../../node_modules/@angular/forms';
 
-const routes: Routes=[
+const routes: Routes = [
   {
     path: '', component: DashboardComponent
   },
   {
-    path: 'dashboard',component: DashboardComponent
+    path: 'dashboard', component: DashboardComponent
   },
   {
-    path: 'profile',component: ProfilepageComponent
+    path: 'profile', component: ProfilepageComponent
   },
   {
-    path: 'projects',component: MyrepositoriesComponent
+    path: 'projects', component: MyrepositoriesComponent
   }];
 @NgModule({
   declarations: [
@@ -35,21 +41,30 @@ const routes: Routes=[
     MyrepositoriesComponent,
     ProfilepageComponent,
     TrialComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent,
+    LoginComponent,
+    ContactusComponent
   ],
   imports: [
+    FormsModule,
     BrowserAnimationsModule,
     BrowserModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatCheckboxModule,
     MatCardModule,
-    MatListModule,
+    MatDialogModule,
+    MatInputModule,
+    MatTableModule,
+    MatToolbarModule,
     MatExpansionModule,
     MatGridListModule,
     MatDividerModule,
-    MatToolbarModule,
-    MatInputModule,
     MatFormFieldModule,
+    MatMenuModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatListModule,
     RouterModule.forRoot(routes)
   ],
   exports: [

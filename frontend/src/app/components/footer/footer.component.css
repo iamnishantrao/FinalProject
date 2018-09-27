@@ -1,0 +1,11 @@
+.space{
+    flex:1 1 ;
+}
+
+ li{
+    height: 15px;      
+    font-size:10px;
+   }
+mat-toolbar{
+    height: 40px;
+}
