@@ -13,8 +13,21 @@ import { MyrepositoriesComponent } from './components/myrepositories/myrepositor
 import { ProfilepageComponent } from './components/profilepage/profilepage.component';
 import { TrialComponent } from './components/trial/trial.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { RouterModule, Routes } from '@angular/router';
 
-
+const routes: Routes=[
+  {
+    path: '', component: DashboardComponent
+  },
+  {
+    path: 'dashboard',component: DashboardComponent
+  },
+  {
+    path: 'profile',component: ProfilepageComponent
+  },
+  {
+    path: 'projects',component: MyrepositoriesComponent
+  }];
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +49,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MatDividerModule,
     MatToolbarModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

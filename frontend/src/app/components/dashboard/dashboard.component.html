@@ -1,5 +1,5 @@
 <div id="card-container" class="row">
-  <div class="col-md-6 col-lg-4 card-block" id="dashboard-item-1">
+  <div class="col-md-6 col-lg-4 card-block" id="dashboard-item-1" (click)="openProfile()" [routerLink]="['/profile']">
     <mat-card>
       <mat-card-title>
         <h1>Profile</h1>
@@ -10,7 +10,7 @@
     </mat-card>
   </div>
 
-  <div class="col-md-6 col-lg-4 card-block" id="dashboard-item-2">
+  <div class="col-md-6 col-lg-4 card-block" id="dashboard-item-2" [routerLink]="['/projects']">
     <mat-card>
       <mat-card-title>
         <h1>My Repositories</h1>
