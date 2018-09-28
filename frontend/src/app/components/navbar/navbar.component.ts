@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 @Component({
@@ -10,10 +10,15 @@ import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
   ]
 })
 export class NavbarComponent implements OnInit {
-
+  @Input() flagLogin: boolean;
+  @Output() flagValueChanged = new EventEmitter<boolean>(); 
   constructor() { }
 
   ngOnInit() {
   }
-
+  logmeout()
+  {
+    this.flagLogin = !this.flagLogin;
+    this.flagValueChanged.emit(this.flagLogin);
+  }
 }

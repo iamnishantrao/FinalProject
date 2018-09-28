@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontend';
-  flagDashboard = true;
-  flagProfile = false;
-  flagMyrepositories = false;
+  flagLogin = true;
+  flagValueChanged(e)
+  {
+    this.flagLogin = e;
+  }
 }

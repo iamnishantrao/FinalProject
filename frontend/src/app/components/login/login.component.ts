@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  @Input() flagLogin: boolean;
+  @Output() flagValueChanged = new EventEmitter<boolean>();
   constructor() { }
   username:string;
   password:string;
@@ -17,7 +19,8 @@ export class LoginComponent implements OnInit {
   }
   login():void{
     if (this.username=='admin'&& this.password=='admin'){
-      alert("Welcome Admin")
+      this.flagLogin = !this.flagLogin;
+      this.flagValueChanged.emit(this.flagLogin);
     }else{
       alert ("Invalid Credential");
     }
