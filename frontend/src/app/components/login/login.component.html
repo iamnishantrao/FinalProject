@@ -1,31 +1,4 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span>Github Dashboard</span>
-    <span class="example-fill-remaining-space"></span>
-    <span class="align-center"></span>
-    <span class="spacer"></span>
-    <button mat-button (click)="about()" >About</button>
-    <button mat-button (click)="contact()">Contact</button>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>
-        <mat-icon>trending_flat</mat-icon>
-        <span>Option 1</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>trending_flat</mat-icon>
-        <span>Option 2</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>trending_flat</mat-icon>
-        <span>Option 3</span>
-      </button>
-    </mat-menu>
-  </mat-toolbar-row>  
-</mat-toolbar>
-
+<app-navbar></app-navbar>
 <mat-card class="login">
   <mat-card-header>
     <mat-card-title>Login Via GitHub</mat-card-title>
