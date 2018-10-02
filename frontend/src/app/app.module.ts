@@ -21,6 +21,8 @@ import { LoginComponent } from './components/login/login.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { FormsModule } from '../../node_modules/@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
+
 const routes: Routes = [
   {
     path: '', component: DashboardComponent
@@ -44,7 +46,7 @@ const routes: Routes = [
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    ContactusComponent
+    ContactusComponent,
   ],
   imports: [
     FormsModule,
@@ -65,7 +67,8 @@ const routes: Routes = [
     MatIconModule,
     MatProgressSpinnerModule,
     MatListModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   exports: [
     RouterModule

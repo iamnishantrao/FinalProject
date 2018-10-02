@@ -11,6 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
+using Microsoft.EntityFrameworkCore;
+using GithubDashboard.Models;
+
 namespace GithubDashboard
 {
     public class Startup
@@ -25,7 +28,21 @@ namespace GithubDashboard
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //RAO
+            services.AddCors(options => options.AddPolicy("Cors", builder =>
+            {
+                builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            }));
+            services.AddMvc();
+
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            // REGISTER AND CONFIGURE DBCONTEXT
+            var connection = @"Server=WIN-T93DATIE6IB\SQLEXPRESS;Database=githubdashboard;Trusted_Connection=True;ConnectRetryCount=0";
+            services.AddDbContext<GithubDashboardContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +58,10 @@ namespace GithubDashboard
             }
 
             app.UseHttpsRedirection();
+
+            // RAO
+            app.UseCors("Cors");
+
             app.UseMvc();
         }
     }
