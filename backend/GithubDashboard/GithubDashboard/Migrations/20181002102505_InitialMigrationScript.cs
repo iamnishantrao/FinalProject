@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GithubDashboard.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialMigrationScript : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -71,6 +71,23 @@ namespace GithubDashboard.Migrations
                 {
                     table.PrimaryKey("PK_Pulls", x => x.id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "User",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    UserName = table.Column<string>(nullable: true),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User", x => x.UserId);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -83,6 +100,9 @@ namespace GithubDashboard.Migrations
 
             migrationBuilder.DropTable(
                 name: "Pulls");
+
+            migrationBuilder.DropTable(
+                name: "User");
         }
     }
 }

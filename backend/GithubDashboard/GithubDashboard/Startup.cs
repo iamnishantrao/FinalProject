@@ -41,7 +41,7 @@ namespace GithubDashboard
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // REGISTER AND CONFIGURE DBCONTEXT
-            var connection = @"Server=WIN-T93DATIE6IB\SQLEXPRESS;Database=githubdashboard;Trusted_Connection=True;ConnectRetryCount=0";
+            var connection = @"Server=WIN-VONCRUK8RNE\SQLEXPRESS;Database=githubdashboard;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<GithubDashboardContext>(options => options.UseSqlServer(connection));
         }
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../../../../node_modules/font-awesome/css/font-awesome.min.css' 
 import {MatCardModule } from '@angular/material/card';
-import { Router } from '../../../../node_modules/@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',

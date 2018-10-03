@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from '../../../node_modules/rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ProfileModel } from '../models/profile.model';
 
@@ -15,7 +15,6 @@ export class ProfileService {
     // var profileUrl = "https://api.github.com/users/iamnishantrao";
     
     var data = this.http.get<ProfileModel>(profileUrl);
-    console.log(data);
 
     return data;
   }

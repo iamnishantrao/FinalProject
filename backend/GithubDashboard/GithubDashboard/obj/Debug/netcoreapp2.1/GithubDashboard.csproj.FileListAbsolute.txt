@@ -12,3 +12,17 @@ C:\Users\Administrator\Desktop\FinalProject\backend\GithubDashboard\GithubDashbo
 C:\Users\Administrator\Desktop\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.dll
 C:\Users\Administrator\Desktop\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.pdb
 C:\Users\Administrator\Desktop\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.csprojAssemblyReference.cache
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\bin\Debug\netcoreapp2.1\GithubDashboard.deps.json
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\bin\Debug\netcoreapp2.1\GithubDashboard.runtimeconfig.json
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\bin\Debug\netcoreapp2.1\GithubDashboard.runtimeconfig.dev.json
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\bin\Debug\netcoreapp2.1\GithubDashboard.dll
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\bin\Debug\netcoreapp2.1\GithubDashboard.pdb
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.csprojAssemblyReference.cache
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.csproj.CoreCompileInputs.cache
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.RazorAssemblyInfo.cache
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.RazorAssemblyInfo.cs
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.AssemblyInfoInputs.cache
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.AssemblyInfo.cs
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.RazorTargetAssemblyInfo.cache
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.dll
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.pdb
