@@ -21,5 +21,6 @@ namespace GithubDashboard.Models
         public DbSet<Pull> Pulls { get; set; }
         public DbSet<Repos> Repos { get; set; }
         public DbSet<GithubDashboard.Models.User> User { get; set; }
+        public DbSet<GithubDashboard.Models.StarredRepositories> StarredRepositories { get; set; }
     }
 }
