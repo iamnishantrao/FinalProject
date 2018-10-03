@@ -17,7 +17,7 @@ namespace GithubDashboard.Controllers
     {
         // GET: api/Repo
         [HttpGet("{id}")]
-        public IEnumerable<Repos> Get(string id)
+        public IEnumerable<Repo> Get(string id)
         {
             string url = "https://api.github.com/users/"+id+"/repos";
             var json = "";
@@ -28,7 +28,7 @@ namespace GithubDashboard.Controllers
             {
                 json = reader.ReadToEnd();
             }
-            IEnumerable<Repos> repositories = JsonConvert.DeserializeObject<IEnumerable<Repos>>(json);
+            IEnumerable<Repo> repositories = JsonConvert.DeserializeObject<IEnumerable<Repo>>(json);
             return repositories;
         }
 

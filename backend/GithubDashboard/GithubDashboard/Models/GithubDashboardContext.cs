@@ -16,10 +16,11 @@ namespace GithubDashboard.Models
 
         }
 
-        public DbSet<Profile> Profiles { get; set; }
-        public DbSet<Issue> Issues { get; set; }
-        public DbSet<Pull> Pulls { get; set; }
-        public DbSet<Repos> Repos { get; set; }
-        public DbSet<GithubDashboard.Models.User> User { get; set; }
+        //public DbSet<Profile> Profiles { get; set; }
+        //public DbSet<Issue> Issues { get; set; }
+        //public DbSet<Pull> Pulls { get; set; }
+        //public DbSet<Repo> Repos { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<StarredRepo> StarredRepo { get; set; }
     }
 }

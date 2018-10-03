@@ -4,14 +4,16 @@ using GithubDashboard.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GithubDashboard.Migrations
 {
     [DbContext(typeof(GithubDashboardContext))]
-    partial class GithubDashboardContextModelSnapshot : ModelSnapshot
+    [Migration("20181003123917_InitialMigrationScript")]
+    partial class InitialMigrationScript
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

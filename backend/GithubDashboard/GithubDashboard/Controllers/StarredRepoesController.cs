@@ -11,56 +11,57 @@ namespace GithubDashboard.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class StarredRepoesController : ControllerBase
     {
         private readonly GithubDashboardContext _context;
 
-        public UsersController(GithubDashboardContext context)
+        public StarredRepoesController(GithubDashboardContext context)
         {
             _context = context;
         }
 
-        // GET: api/Users
+        // GET: api/StarredRepoes
         [HttpGet]
-        public IEnumerable<User> GetUsers()
+        public IEnumerable<StarredRepo> GetStarredRepo()
         {
-            return _context.Users;
+            return _context.StarredRepo;
         }
 
-        // GET: api/Users/5
+        // GET: api/StarredRepoes/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetUser([FromRoute] int id)
+        public async Task<IActionResult> GetStarredRepo([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var user = await _context.Users.FindAsync(id);
+            //var starredRepo = await _context.StarredRepo.FindAsync(id);
+            var starredRepo = _context.StarredRepo.Where(d => d.userId == id).ToList();
 
-            if (user == null)
+            if (starredRepo == null)
             {
                 return NotFound();
             }
 
-            return Ok(user);
+            return Ok(starredRepo);
         }
 
-        // PUT: api/Users/5
+        // PUT: api/StarredRepoes/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser([FromRoute] int id, [FromBody] User user)
+        public async Task<IActionResult> PutStarredRepo([FromRoute] int id, [FromBody] StarredRepo starredRepo)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != user.UserId)
+            if (id != starredRepo.StarredRepoId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(user).State = EntityState.Modified;
+            _context.Entry(starredRepo).State = EntityState.Modified;
 
             try
             {
@@ -68,7 +69,7 @@ namespace GithubDashboard.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserExists(id))
+                if (!StarredRepoExists(id))
                 {
                     return NotFound();
                 }
@@ -81,45 +82,45 @@ namespace GithubDashboard.Controllers
             return NoContent();
         }
 
-        // POST: api/Users
+        // POST: api/StarredRepoes
         [HttpPost]
-        public async Task<IActionResult> PostUser([FromBody] User user)
+        public async Task<IActionResult> PostStarredRepo([FromBody] StarredRepo starredRepo)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.Users.Add(user);
+            _context.StarredRepo.Add(starredRepo);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUser", new { id = user.UserId }, user);
+            return CreatedAtAction("GetStarredRepo", new { id = starredRepo.StarredRepoId }, starredRepo);
         }
 
-        // DELETE: api/Users/5
+        // DELETE: api/StarredRepoes/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser([FromRoute] int id)
+        public async Task<IActionResult> DeleteStarredRepo([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var user = await _context.Users.FindAsync(id);
-            if (user == null)
+            var starredRepo = await _context.StarredRepo.FindAsync(id);
+            if (starredRepo == null)
             {
                 return NotFound();
             }
 
-            _context.Users.Remove(user);
+            _context.StarredRepo.Remove(starredRepo);
             await _context.SaveChangesAsync();
 
-            return Ok(user);
+            return Ok(starredRepo);
         }
 
-        private bool UserExists(int id)
+        private bool StarredRepoExists(int id)
         {
-            return _context.Users.Any(e => e.UserId == id);
+            return _context.StarredRepo.Any(e => e.StarredRepoId == id);
         }
     }
 }
