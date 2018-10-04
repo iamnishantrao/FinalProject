@@ -20,7 +20,6 @@ namespace GithubDashboard.Models
         public string user_login { get; set; }
         public string user_html_url { get; set; }
 
-        [ForeignKey("UserRefId")]
-        public virtual User User { get; set; }
+        public ICollection<UserRepos> UserRepos { get; set; }
     }
 }

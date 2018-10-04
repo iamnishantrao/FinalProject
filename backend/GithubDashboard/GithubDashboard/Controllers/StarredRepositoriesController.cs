@@ -9,6 +9,12 @@ using GithubDashboard.Models;
 
 namespace GithubDashboard.Controllers
 {
+
+    public class RepoBinder
+    {
+        public StarredRepositories starredRepositories { get; set; }
+        public int User_id { get; set; }
+    }
     [Route("api/starredrepos")]
     [ApiController]
     public class StarredRepositoriesController : ControllerBase
@@ -83,16 +89,20 @@ namespace GithubDashboard.Controllers
 
         // POST: api/StarredRepositories
         [HttpPost]
-        public async Task<IActionResult> PostStarredRepositories([FromBody] StarredRepositories starredRepositories,[FromQuery]int id)
+        public async Task<IActionResult> PostStarredRepositories([FromBody] RepoBinder repo)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            
+            _context.StarredRepositories.Add(repo.starredRepositories);
+            UserRepos userRepos = new UserRepos();
+            userRepos.UserId = repo.User_id;
+            userRepos.StarredRepositoriesId = repo.starredRepositories.StarredRepositoriesId;
+            _context.UserRepos.Add(userRepos);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetStarredRepositories", new { id = starredRepositories.StarredRepositoriesId }, starredRepositories);
+            return CreatedAtAction("GetStarredRepositories", 1);
         }
 
         // DELETE: api/StarredRepositories/5

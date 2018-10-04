@@ -22,6 +22,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
+import { PullComponent } from './components/pull/pull.component';
+import { PulllistComponent } from './components/pulllist/pulllist.component';
+import { PullrepolistComponent } from './components/pullrepolist/pullrepolist.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { IssuelistComponent } from './components/issuelist/issuelist.component';
+import { IssueComponent } from './components/issue/issue.component';
+
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -38,9 +45,25 @@ const routes: Routes = [
   },
   {
     path: 'projects', component: MyrepositoriesComponent
-  }];
+  },
+  {
+    path:'pullrepolist', component: PullrepolistComponent
+  },
+  {
+    path:'pulllist/:name', component:PulllistComponent
+  },
+  {
+    path:'issuelist' , component : IssuelistComponent 
+  },
+  {
+    path:'issue/:name' , component: IssueComponent
+  }
+];
 @NgModule({
   declarations: [
+    PullrepolistComponent,
+    PulllistComponent,
+    PullComponent,
     AppComponent,
     DashboardComponent,
     MyrepositoriesComponent,
@@ -50,6 +73,10 @@ const routes: Routes = [
     FooterComponent,
     LoginComponent,
     ContactusComponent,
+    SignupComponent,   
+    IssuelistComponent,
+    IssueComponent,
+
   ],
   imports: [
     FormsModule,

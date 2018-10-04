@@ -1,0 +1,11 @@
+mat-card {
+    margin:0px;   
+    width: 50%;
+    height: 40%;
+    background-color: #331135;
+    text-align: center;
+}
+mat-grid-list{
+
+    background-color: #e25d5d;
+}

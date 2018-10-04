@@ -1,0 +1,14 @@
+<div id="grid-list-container"  >
+  <div id="card-container" class="row">
+    <div class="col-md-6 col-lg-4 card-block" *ngFor="let project of pullrepolist;index as i">
+      <mat-card [routerLink]="['/pulllist',project.name]">
+        <mat-card-title>
+          <h1>{{i+1}}: {{project.name}}</h1>
+        </mat-card-title>
+        <mat-card-content>
+          <p>{{project.description}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

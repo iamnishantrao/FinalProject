@@ -1,5 +1,5 @@
 export interface IssueModel {
-   
+    
     id: number;
     number: number; 
     title: string;
@@ -9,4 +9,5 @@ export interface IssueModel {
     created_at: string;
     cloased_at: string;
     body: string;
+
 };
