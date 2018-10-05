@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute } from '@angular/router'
+import {IssuesService } from '../../services/issues.service'
 
 @Component({
   selector: 'app-issuelist',
@@ -7,31 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IssuelistComponent implements OnInit {
 issuelist;
-  constructor() { }
+name:string;
+  constructor(private route:ActivatedRoute,private issu:IssuesService) { }
 
   ngOnInit() {
-this.issuelist=[
-{
-  name:"Issue 1"
-},
-{
-  name:"Issue 2"
-},
-{
-  name:"Issue 3"
-},
-{
-  name:"Issue 4"
-},
-{
-  name:"Issue 5"
-},
-{
-  name:"Issue 6"
-},
-
-];
-
+    this.issu.getIssues().subscribe(data => this.issuelist = data);
+       this.name=this.route.snapshot.paramMap.get("name");
 
   }
 

@@ -9,9 +9,11 @@ using Newtonsoft.Json;
 using GithubDashboard.Models;
 using System.Net;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GithubDashboard.Controllers
 {
+    [Authorize(Policy = "ApiUser")]
     [Route("api/[controller]")]
     [ApiController]
     public class IssueController : ControllerBase

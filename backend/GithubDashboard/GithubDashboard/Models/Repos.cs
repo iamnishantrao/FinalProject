@@ -31,6 +31,5 @@ namespace GithubDashboard.Models
         public string user_login { get; set; }
         [JsonProperty("owner.html_url")]
         public string user_html_url { get; set; }
-        public virtual User User { get; set; }
     }
 }

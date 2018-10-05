@@ -1,0 +1,12 @@
+<mat-grid-list cols="3" rowHeight="150px">
+
+  <mat-grid-tile *ngFor="let project of projectlist;index as i">
+    <mat-card [routerLink] = "['/issuelist',project.name]">
+      
+      {{project.name}}
+    </mat-card>
+  </mat-grid-tile>
+
+
+
+</mat-grid-list>

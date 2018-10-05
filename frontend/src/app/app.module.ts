@@ -28,8 +28,9 @@ import { PullrepolistComponent } from './components/pullrepolist/pullrepolist.co
 import { SignupComponent } from './components/signup/signup.component';
 import { IssuelistComponent } from './components/issuelist/issuelist.component';
 import { IssueComponent } from './components/issue/issue.component';
+import {ProjectlistComponent} from './components/projectlist/projectlist.component'
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -50,13 +51,19 @@ const routes: Routes = [
     path:'pullrepolist', component: PullrepolistComponent
   },
   {
-    path:'pulllist/:name', component:PulllistComponent
+    path:'pulllist/:name', component: PulllistComponent
   },
   {
-    path:'issuelist' , component : IssuelistComponent 
+    path:'pull/:name', component:PullComponent
   },
   {
-    path:'issue/:name' , component: IssueComponent
+    path:'issuelist/:name' , component : IssuelistComponent 
+  },
+  {
+    path:'issue/:id/:number/:title/:user_login/:state/:assigne/:created_at/:cloased_at/:body' , component: IssueComponent
+  },
+  {
+    path:'projectlist' ,component: ProjectlistComponent
   }
 ];
 @NgModule({
@@ -76,7 +83,7 @@ const routes: Routes = [
     SignupComponent,   
     IssuelistComponent,
     IssueComponent,
-
+    ProjectlistComponent
   ],
   imports: [
     FormsModule,
@@ -98,7 +105,8 @@ const routes: Routes = [
     MatProgressSpinnerModule,
     MatListModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports: [
     RouterModule

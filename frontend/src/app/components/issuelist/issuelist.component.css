@@ -1,11 +1,16 @@
 mat-card {
-    margin:0px;   
-    width: 50%;
-    height: 40%;
-    background-color: #331135;
+    margin:0px; 
+    margin-top: 20px;  
+    width: 60%;
+    height: 80%;
+ 
     text-align: center;
+    font-style: italic;
 }
-mat-grid-list{
 
-    background-color: #e25d5d;
+div{   
+    margin: auto;
+    margin-top:10px;     
+    text-align: center;
+    font: 20px solid italic;
 }

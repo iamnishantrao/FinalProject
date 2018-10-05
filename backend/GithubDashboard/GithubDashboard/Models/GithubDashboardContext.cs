@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 
 using Microsoft.EntityFrameworkCore;
 using GithubDashboard.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace GithubDashboard.Models
 {
-    public class GithubDashboardContext : DbContext
+    public class GithubDashboardContext : IdentityDbContext<IdentityUser>
     {
         public GithubDashboardContext(DbContextOptions<GithubDashboardContext> options)
             : base(options)
@@ -24,12 +26,16 @@ namespace GithubDashboard.Models
         public DbSet<StarredRepositories> StarredRepositories { get; set; }
         public DbSet<UserRepos> UserRepos { get; set; }
 
+        
         //making primary key and foreign key
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             //Composite key
             modelBuilder.Entity<UserRepos>()
                 .HasKey(o => new { o.StarredRepositoriesId, o.UserId });
+
+ 
 
             //Foreign key with User Table
             modelBuilder.Entity<UserRepos>()
@@ -43,5 +49,6 @@ namespace GithubDashboard.Models
                 .WithMany(c => c.UserRepos)
                 .HasForeignKey(bc => bc.StarredRepositoriesId);
         }
+
     }
 }
