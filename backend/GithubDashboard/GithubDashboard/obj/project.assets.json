@@ -12284,11 +12284,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\FinalProject\\backend\\GithubDashboard\\GithubDashboard\\GithubDashboard.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\FinalProject\\backend\\GithubDashboard\\GithubDashboard\\GithubDashboard.csproj",
       "projectName": "GithubDashboard",
-      "projectPath": "D:\\FinalProject\\backend\\GithubDashboard\\GithubDashboard\\GithubDashboard.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\FinalProject\\backend\\GithubDashboard\\GithubDashboard\\GithubDashboard.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "D:\\FinalProject\\backend\\GithubDashboard\\GithubDashboard\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\FinalProject\\backend\\GithubDashboard\\GithubDashboard\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

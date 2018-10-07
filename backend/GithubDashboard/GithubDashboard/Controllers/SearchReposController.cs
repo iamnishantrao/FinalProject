@@ -21,7 +21,7 @@ namespace GithubDashboard.Controllers
     public class SearchReposController : ControllerBase
     {
         [HttpGet("{id}")]
-        public SearchReposBinder GetProfile([FromRoute] string id)
+        public IEnumerable<Repos> GetRepos([FromRoute] string id)
         {
             string url = "https://api.github.com/search/repositories?q=" + id;
             var json = "";
@@ -33,7 +33,7 @@ namespace GithubDashboard.Controllers
                 json = reader.ReadToEnd();
             }
             SearchReposBinder repos = JsonConvert.DeserializeObject<SearchReposBinder>(json);
-            return repos;
+            return repos.items;
         }
     }
 }

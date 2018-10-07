@@ -1,30 +1,8 @@
-<div>Pull Request of project named {{name}}</div>
-<div id="pulllistcomponents">
-  <label>Id : </label>
-  <input type="text" placeholder="0" id="id" disabled>
-  <br>
-  <label>Html_url : </label>
-  <input type="text" placeholder="0" id="htmlurl" disabled>
-  <br>
-  <label>Number : </label>
-  <input type="text" placeholder="0" id="number" disabled>
-  <br>
-  <label>State : </label>
-  <input type="text" placeholder="0" id="state" disabled>
-  <br>
-  <label>Title : </label>
-  <input type="text" placeholder="0" id="title" disabled>
-  <br>
-  <label>User_Login : </label>
-  <input type="text" placeholder="0" id="userlogin" disabled>
-  <br>
-  <label>Body : </label>
-  <input type="text" placeholder="0" id="body" disabled>
-  <br>
-  <label>Updated_at : </label>
-  <input type="text" placeholder="0" id="updatedat" disabled>
-  <br>
-  <label>Closed_at : </label>
-  <input type="text" placeholder="0" id="closedat" disabled>
-
-</div>
+<mat-grid-list cols="3" rowHeight="150px">
+  <div>PullRequest For {{name}}</div>
+  <mat-grid-tile *ngFor="let pull of pulllist">
+    <mat-card [routerLink]="['/pulllist',pull.id,pull.number,pull.html_url,pull.state,pull.assigne,pull.created_at,pull.created_at,pull.cloased_at,pull.body]">
+      {{pull.title}}
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

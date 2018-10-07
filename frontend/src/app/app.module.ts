@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import {ProfileService} from './services/profile.service'
 import {IssuesService} from './services/issues.service'
 
+import { JwtModule } from '@auth0/angular-jwt';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatCheckboxModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
@@ -33,6 +35,7 @@ import {ProjectlistComponent} from './components/projectlist/projectlist.compone
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   {
@@ -64,8 +67,15 @@ const routes: Routes = [
   },
   {
     path:'projectlist' ,component: ProjectlistComponent
-  }
+  },
+  {
+    path: 'search/:keyword/:flag', component: SearchComponent
+  },
 ];
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 @NgModule({
   declarations: [
     PullrepolistComponent,
@@ -83,7 +93,8 @@ const routes: Routes = [
     SignupComponent,   
     IssuelistComponent,
     IssueComponent,
-    ProjectlistComponent
+    ProjectlistComponent,
+    SearchComponent
   ],
   imports: [
     FormsModule,

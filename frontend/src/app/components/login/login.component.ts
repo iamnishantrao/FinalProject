@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { Observable } from 'rxjs';
+import { LoginService } from '../../services/login.service';
+import { LoginModel } from '../../models/login.model';
+import { tokenGetter } from '../../app.module';
 
 @Component({
   selector: 'app-login',
@@ -11,24 +14,41 @@ export class LoginComponent implements OnInit {
 
   @Input() flagLogin: boolean;
   @Output() flagValueChanged = new EventEmitter<boolean>();
-  constructor() { }
-  username:string;
-  password:string;
+  constructor(private loginService: LoginService) { }
+  username: string;
+  password: string;
+  loginModel: LoginModel;
+  loginCallback: any;
+  auth_token: string;
 
   ngOnInit() {
   }
-  login():void{
-    if (this.username=='admin'&& this.password=='admin'){
-      this.flagLogin = !this.flagLogin;
-      this.flagValueChanged.emit(this.flagLogin);
-    }else{
-      alert ("Invalid Credential");
-    }
+  login(): void {
+    this.loginModel =
+      {
+        username: this.username,
+        password: this.password
+      };
+    this.loginService.doLogin(this.loginModel).subscribe(data => {
+      if (data == "true") {
+        //this.auth_token = tokenGetter();
+        this.flagLogin = !this.flagLogin;
+        this.flagValueChanged.emit(this.flagLogin);
+      }
+
+    }, error => { alert("Invalid Credentials") });
+
+    // if (this.username == 'admin' && this.password == 'admin') {
+    //   this.flagLogin = !this.flagLogin;
+    //   this.flagValueChanged.emit(this.flagLogin);
+    // } else {
+    //   alert("Invalid Credential");
+    // }
   }
-  about():void{
+  about(): void {
     alert("About Information")
   }
-  contact():void{
+  contact(): void {
     alert("Contact Information")
   }
 

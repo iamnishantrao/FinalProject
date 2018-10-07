@@ -20,20 +20,16 @@ namespace GithubDashboard.Controllers
         public string Password { get; set; }
     }
 
-
-
     [Route("api/[controller]")]
     [ApiController]
     public class SignupController : ControllerBase
     {
         private readonly GithubDashboardContext _appDbContext;
         private readonly UserManager<IdentityUser> _userManager;
-        //private readonly IMapper _mapper;
 
         public SignupController(UserManager<IdentityUser> userManager, GithubDashboardContext appDbContext)
         {
             _userManager = userManager;
-            //_mapper = mapper;
             _appDbContext = appDbContext;
         }
 
@@ -46,16 +42,16 @@ namespace GithubDashboard.Controllers
                 return BadRequest(ModelState);
             }
 
-            var userIdentity = new IdentityUser { UserName = model.Email,Email = model.Email};
+            var userIdentity = new IdentityUser { UserName = model.UserName, Email = model.Email};
 
             var result = await _userManager.CreateAsync(userIdentity, model.Password);
 
-            if (!result.Succeeded) return new BadRequestObjectResult("Not Created");
+            if (!result.Succeeded) return new BadRequestObjectResult(result);
 
             await _appDbContext.User.AddAsync(new User { IdentityId = userIdentity.Id,Password = model.Password, Email = model.Email,UserName = model.UserName });
             await _appDbContext.SaveChangesAsync();
 
-            return new OkObjectResult("Account created");
+            return new OkObjectResult(result);
         }
     }
 }

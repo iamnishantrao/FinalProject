@@ -1,4 +1,4 @@
-#grid-list-container{
+/* #grid-list-container{
     width: 80%;
     text-align: center;
     margin: auto;
@@ -13,4 +13,12 @@ mat-card:hover{
 }
 mat-card{
     border: 2px solid black;
+} */
+mat-card {
+    margin:0px;   
+    width: 60%;
+    height: 50%;
+ 
+    text-align: center;
+    font-style: italic;
 }

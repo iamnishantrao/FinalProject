@@ -122,8 +122,7 @@ namespace GithubDashboard
             services.AddMvc();
             
             // REGISTER AND CONFIGURE DBCONTEXT
-            var connection = @"Server=WIN-VONCRUK8RNE\SQLEXPRESS;Database=githubdashboard;Trusted_Connection=True;ConnectRetryCount=0";
-            services.AddDbContext<GithubDashboardContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<GithubDashboardContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

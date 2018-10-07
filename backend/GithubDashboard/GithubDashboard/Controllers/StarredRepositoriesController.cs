@@ -52,41 +52,6 @@ namespace GithubDashboard.Controllers
             return Ok(starredRepositories);
         }
 
-        // PUT: api/StarredRepositories/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutStarredRepositories([FromRoute] int id, [FromBody] StarredRepositories starredRepositories)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != starredRepositories.StarredRepositoriesId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(starredRepositories).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!StarredRepositoriesExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
         // POST: api/StarredRepositories
         [HttpPost]
         public async Task<IActionResult> PostStarredRepositories([FromBody] RepoBinder repo)
@@ -103,32 +68,6 @@ namespace GithubDashboard.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetStarredRepositories", 1);
-        }
-
-        // DELETE: api/StarredRepositories/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteStarredRepositories([FromRoute] int id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var starredRepositories = await _context.StarredRepositories.FindAsync(id);
-            if (starredRepositories == null)
-            {
-                return NotFound();
-            }
-
-            _context.StarredRepositories.Remove(starredRepositories);
-            await _context.SaveChangesAsync();
-
-            return Ok(starredRepositories);
-        }
-
-        private bool StarredRepositoriesExists(int id)
-        {
-            return _context.StarredRepositories.Any(e => e.StarredRepositoriesId == id);
         }
     }
 }

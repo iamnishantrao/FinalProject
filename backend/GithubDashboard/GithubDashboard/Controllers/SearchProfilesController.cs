@@ -31,7 +31,7 @@ namespace GithubDashboard.Controllers
 
         // GET: api/SearchProfiles
         [HttpGet("{id}")]
-        public SearchUserBinder GetProfile([FromRoute] string id)
+        public IEnumerable<Profile> GetProfile([FromRoute] string id)
         {
             string url = "https://api.github.com/search/users?q="+id;
             var json = "";
@@ -43,9 +43,7 @@ namespace GithubDashboard.Controllers
                 json = reader.ReadToEnd();
             }
             SearchUserBinder profiles = JsonConvert.DeserializeObject<SearchUserBinder>(json);
-            return profiles;
+            return profiles.items;
         }
-
-        
     }
 }

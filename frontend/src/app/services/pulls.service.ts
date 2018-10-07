@@ -10,7 +10,7 @@ export class PullsService {
 
   constructor(private http : HttpClient) { }
 
-  getIssues(): Observable<PullsModel[]>
+  getPulls(): Observable<PullsModel[]>
   {
     var profileUrl = "https://localhost:44357/api/pull";
     var data = this.http.get<PullsModel[]>(profileUrl);

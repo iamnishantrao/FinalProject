@@ -1,6 +1,5 @@
 export interface RepoModel {
-    
-    id: string;
+    repo_id: string;
     name: string;
     html_url: string;
     description: string;

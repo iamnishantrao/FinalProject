@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { ActivatedRoute } from '@angular/router';
+import {PullsService} from '../../services/pulls.service';
+import { ReposService } from '../../services/repos.service';
 
 @Component({
   selector: 'app-pullrepolist',
@@ -8,33 +11,11 @@ import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 })
 export class PullrepolistComponent implements OnInit {
 
-  pullrepolist;
-  constructor() { }
+  projectlist
+  constructor(private repo: ReposService) { }
 
   ngOnInit() {
-    this.pullrepolist = [
-      {
-        name: "Pull list 1",
-        description: "Hello This is Pull list 1"
-      },
-      {
-        name: "Pull list 2",
-        description: "Hello This is Pull list 2"
-      },
-      {
-        name: "Pull list 3",
-        description: "Hello This is Pull list 3"
-      },
-      {
-        name: "Pull list 4",
-        description: "Hello This is Pull list 4"
-      },
-      {
-        name: "Pull list 5",
-        description: "Hello This is Pull list 5"
-      },
-      
-    ];
+    this.repo.getRepos("dhruv5026").subscribe(data => this.projectlist = data);
   }
 
 }

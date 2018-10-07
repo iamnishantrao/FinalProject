@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PullsService } from '../../services/pulls.service';
 
 @Component({
   selector: 'app-pulllist',
@@ -7,15 +8,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./pulllist.component.css']
 })
 export class PulllistComponent implements OnInit {
-  name : string;
-
-  constructor(private route:ActivatedRoute,private router:Router) { 
-    
-  }
+  pulllist;
+  name:string;
+  constructor(private route:ActivatedRoute,private pull:PullsService) { }
 
   ngOnInit() {
-  this.name = this.route.snapshot.paramMap.get("name");
-  console.log(name);
-    
+    this.pull.getPulls().subscribe(data => this.pulllist = data);
+       this.name=this.route.snapshot.paramMap.get("name");
   }
 }
