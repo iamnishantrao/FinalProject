@@ -22,9 +22,9 @@ namespace GithubDashboard.Controllers
 
         // GET: api/Users
         [HttpGet]
-        public IEnumerable<User> GetUsers()
+        public IEnumerable<User> GetUser()
         {
-            return _context.Users;
+            return _context.User;
         }
 
         // GET: api/Users/5
@@ -36,7 +36,7 @@ namespace GithubDashboard.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.User.FindAsync(id);
 
             if (user == null)
             {
@@ -90,7 +90,7 @@ namespace GithubDashboard.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.Users.Add(user);
+            _context.User.Add(user);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetUser", new { id = user.UserId }, user);
@@ -105,13 +105,13 @@ namespace GithubDashboard.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.User.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            _context.Users.Remove(user);
+            _context.User.Remove(user);
             await _context.SaveChangesAsync();
 
             return Ok(user);
@@ -119,7 +119,7 @@ namespace GithubDashboard.Controllers
 
         private bool UserExists(int id)
         {
-            return _context.Users.Any(e => e.UserId == id);
+            return _context.User.Any(e => e.UserId == id);
         }
     }
 }

@@ -1,0 +1,17 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+mat-card {
+    margin: auto;
+    margin-top: 10em;
+    width: 30%;
+    text-align: center;
+}
+mat-card-header{
+    justify-content: center;
+}
+
+table{
+    width: 100%;
+}

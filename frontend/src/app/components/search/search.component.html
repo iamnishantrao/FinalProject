@@ -1,0 +1,9 @@
+<mat-list *ngFor="let search of searchList, index as ndx">
+  <mat-list-item *ngIf="flag == '0'">
+    {{ ndx + 1 }} {{ search.login }}
+  </mat-list-item>
+  <mat-list-item *ngIf="flag == '1'">
+    {{ ndx + 1 }} {{ search.name }} {{ search.user_login }}
+    <button (click)="starThisRepo(ndx)"><i class="far fa-star"></i></button>
+  </mat-list-item>
+</mat-list>

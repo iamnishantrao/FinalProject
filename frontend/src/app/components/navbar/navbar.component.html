@@ -5,8 +5,10 @@
     <!-- <span class="spacing"></span> -->
 
     <mat-form-field>
-      <input matInput>
+      <input matInput placeholder="Search" [(ngModel)]="keyword">
     </mat-form-field>
+    <button mat-button [routerLink]="['/search',keyword,0]">User</button>
+    <button mat-button [routerLink]="['/search',keyword,1]">Repo</button>
 
     <span class="spacing"></span>
 

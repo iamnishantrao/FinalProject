@@ -1,3 +1,4 @@
+
 <app-login *ngIf="flagLogin" [flagLogin]="flagLogin" (flagValueChanged)="flagValueChanged($event)"></app-login>
 <div *ngIf="!flagLogin">
     <app-navbar [flagLogin]="flagLogin" (flagValueChanged)="flagValueChanged($event)"></app-navbar>

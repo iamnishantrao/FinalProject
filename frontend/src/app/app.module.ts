@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import {ProfileService} from './services/profile.service'
 import {IssuesService} from './services/issues.service'
 
+import { JwtModule } from '@auth0/angular-jwt';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatCheckboxModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
@@ -22,9 +24,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
-import { FormsModule } from '@angular/forms';
+import { PullComponent } from './components/pull/pull.component';
+import { PulllistComponent } from './components/pulllist/pulllist.component';
+import { PullrepolistComponent } from './components/pullrepolist/pullrepolist.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { IssuelistComponent } from './components/issuelist/issuelist.component';
+import { IssueComponent } from './components/issue/issue.component';
+import {ProjectlistComponent} from './components/projectlist/projectlist.component'
+
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   {
@@ -38,9 +49,38 @@ const routes: Routes = [
   },
   {
     path: 'projects', component: MyrepositoriesComponent
-  }];
+  },
+  {
+    path:'pullrepolist', component: PullrepolistComponent
+  },
+  {
+    path:'pulllist/:name', component: PulllistComponent
+  },
+  {
+    path:'pull/:name', component:PullComponent
+  },
+  {
+    path:'issuelist/:name' , component : IssuelistComponent 
+  },
+  {
+    path:'issue/:id/:number/:title/:user_login/:state/:assigne/:created_at/:cloased_at/:body' , component: IssueComponent
+  },
+  {
+    path:'projectlist' ,component: ProjectlistComponent
+  },
+  {
+    path: 'search/:keyword/:flag', component: SearchComponent
+  },
+];
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 @NgModule({
   declarations: [
+    PullrepolistComponent,
+    PulllistComponent,
+    PullComponent,
     AppComponent,
     DashboardComponent,
     MyrepositoriesComponent,
@@ -50,6 +90,11 @@ const routes: Routes = [
     FooterComponent,
     LoginComponent,
     ContactusComponent,
+    SignupComponent,   
+    IssuelistComponent,
+    IssueComponent,
+    ProjectlistComponent,
+    SearchComponent
   ],
   imports: [
     FormsModule,
@@ -71,7 +116,8 @@ const routes: Routes = [
     MatProgressSpinnerModule,
     MatListModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports: [
     RouterModule

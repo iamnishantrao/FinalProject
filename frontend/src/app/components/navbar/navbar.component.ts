@@ -11,11 +11,15 @@ import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 })
 export class NavbarComponent implements OnInit {
   @Input() flagLogin: boolean;
-  @Output() flagValueChanged = new EventEmitter<boolean>(); 
+  @Output() flagValueChanged = new EventEmitter<boolean>();
+  searchFlag: boolean;
+  keyword: string;
+
   constructor() { }
 
   ngOnInit() {
   }
+
   logmeout()
   {
     this.flagLogin = !this.flagLogin;

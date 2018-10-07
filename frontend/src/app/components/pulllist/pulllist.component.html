@@ -1,0 +1,8 @@
+<mat-grid-list cols="3" rowHeight="150px">
+  <div>PullRequest For {{name}}</div>
+  <mat-grid-tile *ngFor="let pull of pulllist">
+    <mat-card [routerLink]="['/pulllist',pull.id,pull.number,pull.html_url,pull.state,pull.assigne,pull.created_at,pull.created_at,pull.cloased_at,pull.body]">
+      {{pull.title}}
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

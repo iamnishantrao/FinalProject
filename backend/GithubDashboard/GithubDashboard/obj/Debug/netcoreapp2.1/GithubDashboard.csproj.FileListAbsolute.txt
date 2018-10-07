@@ -17,7 +17,6 @@ D:\FinalProject\backend\GithubDashboard\GithubDashboard\bin\Debug\netcoreapp2.1\
 D:\FinalProject\backend\GithubDashboard\GithubDashboard\bin\Debug\netcoreapp2.1\GithubDashboard.runtimeconfig.dev.json
 D:\FinalProject\backend\GithubDashboard\GithubDashboard\bin\Debug\netcoreapp2.1\GithubDashboard.dll
 D:\FinalProject\backend\GithubDashboard\GithubDashboard\bin\Debug\netcoreapp2.1\GithubDashboard.pdb
-D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.csprojAssemblyReference.cache
 D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.csproj.CoreCompileInputs.cache
 D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.RazorAssemblyInfo.cache
 D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.RazorAssemblyInfo.cs
@@ -26,3 +25,17 @@ D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\
 D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.RazorTargetAssemblyInfo.cache
 D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.dll
 D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.pdb
+F:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.csproj.CoreCompileInputs.cache
+F:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.RazorAssemblyInfo.cache
+F:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.RazorAssemblyInfo.cs
+F:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.AssemblyInfoInputs.cache
+F:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.AssemblyInfo.cs
+F:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.dll
+F:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.pdb
+F:\FinalProject\backend\GithubDashboard\GithubDashboard\bin\Debug\netcoreapp2.1\GithubDashboard.deps.json
+F:\FinalProject\backend\GithubDashboard\GithubDashboard\bin\Debug\netcoreapp2.1\GithubDashboard.runtimeconfig.json
+F:\FinalProject\backend\GithubDashboard\GithubDashboard\bin\Debug\netcoreapp2.1\GithubDashboard.runtimeconfig.dev.json
+F:\FinalProject\backend\GithubDashboard\GithubDashboard\bin\Debug\netcoreapp2.1\GithubDashboard.dll
+F:\FinalProject\backend\GithubDashboard\GithubDashboard\bin\Debug\netcoreapp2.1\GithubDashboard.pdb
+F:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.RazorTargetAssemblyInfo.cache
+D:\FinalProject\backend\GithubDashboard\GithubDashboard\obj\Debug\netcoreapp2.1\GithubDashboard.csprojAssemblyReference.cache
