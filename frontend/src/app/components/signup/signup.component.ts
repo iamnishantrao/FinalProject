@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import {SignupService} from '../../services/signup.service';
-import {SignupModel} from '../../models/signup.model';
+import { SignupService } from '../../services/signup.service';
+import { SignupModel } from '../../models/signup.model';
 
 @Component({
   selector: 'app-signup',
@@ -10,16 +10,17 @@ import {SignupModel} from '../../models/signup.model';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
-  signupModel : SignupModel;
-  Firstname:string;
-  Username:string;
-  email:string;
-  confirmpassword : string;
+  @Input() signupFlag: boolean;
+  @Output() signupflagValueChanged = new EventEmitter<boolean>();
+  signupModel: SignupModel;
+  Firstname: string;
+  Username: string;
+  email: string;
+  confirmpassword: string;
   password: string;
   Lastname: string;
   result;
-  constructor(private signupService : SignupService) { 
+  constructor(private signupService: SignupService) {
   }
 
   ngOnInit() {
@@ -33,26 +34,32 @@ export class SignupComponent implements OnInit {
 
   signup() {
 
-    if((this.Firstname=='') || (this.Username=='') || (this.email==''))
-    {
-        alert("Field is Required");
+    if ((this.Firstname == '') || (this.Username == '') || (this.email == '')) {
+      alert("Field is Required");
     }
     if (this.confirmpassword == this.password) {
-     this.signupModel = {
-      password: this.password,
-      userName: this.Username,
-      firstName: this.Firstname,
-      lastName: this.Lastname,
-      email: this.email
-     };
-     console.log(this.signupModel);
-     this.signupService.doSignup(this.signupModel).subscribe(data => this.result = data );
-     //console.log(this.result);
+      this.signupModel = {
+        password: this.password,
+        userName: this.Username,
+        firstName: this.Firstname,
+        lastName: this.Lastname,
+        email: this.email
+      };
+
+      this.signupService.doSignup(this.signupModel).subscribe(data => {
+        this.result = data;
+        this.signupFlag = !this.signupFlag;
+        this.signupflagValueChanged.emit(this.signupFlag);
+      });
 
     }
     else {
       alert("Confirm Password Not Matched");
     }
+  }
+  goBack() {
+    this.signupFlag = !this.signupFlag;
+    this.signupflagValueChanged.emit(this.signupFlag);
   }
 
 }

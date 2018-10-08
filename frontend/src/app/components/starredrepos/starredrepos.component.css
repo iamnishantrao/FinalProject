@@ -1,0 +1,16 @@
+#grid-list-container{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+.card-block{
+    padding-top: 7.5px;
+    padding-bottom: 7.5px; 
+}
+mat-card:hover{
+    cursor: pointer;
+    background-color: gray !important;
+}
+mat-card{
+    border: 2px solid black;
+}

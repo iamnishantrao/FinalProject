@@ -1,6 +1,8 @@
+<h2>Issues For {{name}}</h2>
+
 <mat-grid-list cols="3" rowHeight="150px">
 
-     <div>Issues For {{name}}</div>
+     <div></div>
   <mat-grid-tile *ngFor="let issue of issuelist">
 
     <mat-card [routerLink]="['/issue',issue.id,issue.number,issue.title,issue.user_login,issue.state,issue.assigne,issue.created_at,issue.cloased_at,issue.body]">

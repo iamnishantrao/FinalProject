@@ -9,19 +9,7 @@ import { StarrepoModel } from '../models/starrepo.model';
 export class StarrepoService {
   repo: StarrepoModel;
 
-  // starredRepositories = {
-  //   clone_url: "https://github.com/kibub2/final-kibeob.git",
-  //   created_at: "2016-08-25T08:14:32Z",
-  //   description: "finalproject",
-  //   html_url: "https://github.com/kibub2/final-kibeob",
-  //   id: 66538794,
-  //   name: "final-kibeob",
-  //   user_html_url: "https://github.com/kibub2",
-  //   user_login: "kibub2",
-  //   pushed_at: "2016-08-30T17:54:36Z",
-  //   updated_at: "2016-08-25T08:15:00Z",
-  //   User_Id: 1
-  // }
+  
 
   constructor(private http: HttpClient) { }
 

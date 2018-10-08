@@ -1,9 +1,9 @@
 <div id="grid-list-container">
   <div id="card-container" class="row">
     <div class="col-md-6 col-lg-4 card-block" *ngFor="let project of ListOfRepos;index as i">
-      <mat-card>
+      <mat-card (click)=newPage(project.html_url)>
         <mat-card-title>
-          <h1>{{i+1}}: {{project.name}}</h1>
+          {{i+1}}: {{project.name}}
         </mat-card-title>
         <mat-card-content>
           <p>{{project.description}}</p>

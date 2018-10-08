@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { RepoModel } from '../../models/repo.model';
+import { ReposService } from '../../services/repos.service';
 
 @Component({
   selector: 'app-myrepositories',
@@ -11,40 +13,17 @@ import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 })
 export class MyrepositoriesComponent implements OnInit {
 
-  ListOfRepos ; 
-  constructor() { }
+  ListOfRepos: RepoModel[] ; 
+  constructor(private reposervice: ReposService) { }
 
   ngOnInit() {
-    this.ListOfRepos = [
-      {
-        name : "Project1",
-        description : "Hello This is Project 1"
-      },
-      {
-        name : "Project1",
-        description : "Hello This is Project 1"
-      },
-      {
-        name : "Project1",
-        description : "Hello This is Project 1"
-      },
-      {
-        name : "Project1",
-        description : "Hello This is Project 1"
-      },
-      {
-        name : "Project2",
-        description : "Hello This is Project 2"
-      },
-      {
-        name : "Project3",
-        description : "Hello This is Project 3"
-      },
-      {
-        name : "Project4",
-        description : "Hello This is Project 4"
-      },
-    ];
+    this.reposervice.getRepos("bla").subscribe(data=> {
+      this.ListOfRepos = data;
+    })
+  }
+  newPage(url: string)
+  {
+      window.open(url);
   }
 
 }

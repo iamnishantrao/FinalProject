@@ -1,17 +1,16 @@
 <mat-card class="profile-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Rajnikant</mat-card-title>
-    <mat-card-subtitle>rajni.kant@gmail.com</mat-card-subtitle>
-    <mat-card-subtitle>rajni.kant.gangsta</mat-card-subtitle>
+    <mat-card-title>{{profile.name}}</mat-card-title>
+    <mat-card-subtitle>{{profile.login}}</mat-card-subtitle>
+    <mat-card-subtitle>{{profile.email}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="http://im.rediff.com/news/2009/sep/10nlook1.jpg" alt="Photo of a Shiba Inu">
+  <img mat-card-image src={{profile.avatar_url}} alt="Photo of a Shiba Inu">
   <mat-divider></mat-divider>
   <mat-card-content>
     <br>
     <p>
-      You have completed 5 projects, we can provide all the list of issues, starred repositories on your dashboard ALl you need
-      to do is move away from your profile to dashboard
+      {{profile.bio}}
     </p>
   </mat-card-content>
   <mat-divider></mat-divider>

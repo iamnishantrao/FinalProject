@@ -17,6 +17,7 @@ namespace GithubDashboard.Controllers
             var response = new
             {
                 id = identity.Claims.Single(c => c.Type == "id").Value,
+                user_name = userName,
                 auth_token = await jwtFactory.GenerateEncodedToken(userName, identity),
                 expires_in = (int)jwtOptions.ValidFor.TotalSeconds
             };

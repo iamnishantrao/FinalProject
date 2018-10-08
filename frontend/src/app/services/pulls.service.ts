@@ -8,11 +8,14 @@ import { PullsModel } from '../models/pulls.model';
 })
 export class PullsService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getPulls(): Observable<PullsModel[]>
-  {
-    var profileUrl = "https://localhost:44357/api/pull";
+  user_name = localStorage.getItem('user_name');
+  getPulls(name: string): Observable<PullsModel[]> {
+
+    var keyword = this.user_name + " " + name;
+
+    var profileUrl = "https://localhost:44357/api/pull/"+keyword ;
     var data = this.http.get<PullsModel[]>(profileUrl);
 
     return data;

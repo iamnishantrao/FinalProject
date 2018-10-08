@@ -3,14 +3,16 @@ mat-card {
     margin-top: 20px;  
     width: 60%;
     height: 80%;
- 
+    background-color: wheat;
     text-align: center;
     font-style: italic;
 }
+mat-card:hover{
+    cursor: pointer;
+    background-color: #F3F0F0;
+}
 
-div{   
-    margin: auto;
-    margin-top:10px;     
+h2{
+    margin-top: 10px;
     text-align: center;
-    font: 20px solid italic;
 }

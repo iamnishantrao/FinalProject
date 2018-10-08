@@ -13,15 +13,16 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace GithubDashboard.Controllers
 {
-    [Authorize(Policy = "ApiUser")]
     [Route("api/[controller]")]
     [ApiController]
     public class IssueController : ControllerBase
     {
-        [HttpGet]
-        public IEnumerable<Issue> Get()
+        [HttpGet("{id}")]
+        public IEnumerable<Issue> Get([FromRoute]string id)
         {
-            string url = "https://api.github.com/repos/jupyterlab/jupyterlab/issues";
+            var str = id.Split(" ");
+
+            string url = "https://api.github.com/repos/" + str[0] + "/" + str[1] + "/issues";
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.UserAgent = "Nisant Yadav";

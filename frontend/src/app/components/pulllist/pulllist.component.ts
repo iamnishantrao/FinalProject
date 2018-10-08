@@ -13,7 +13,7 @@ export class PulllistComponent implements OnInit {
   constructor(private route:ActivatedRoute,private pull:PullsService) { }
 
   ngOnInit() {
-    this.pull.getPulls().subscribe(data => this.pulllist = data);
-       this.name=this.route.snapshot.paramMap.get("name");
+    this.name=this.route.snapshot.paramMap.get("name");
+    this.pull.getPulls(this.name).subscribe(data => this.pulllist = data);
   }
 }

@@ -8,7 +8,7 @@ import { RepoModel } from '../../models/repo.model';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit {
 
@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
   searchList;
   flag;
   keyword: string;
+  page: number = 1;
 
   constructor(private route: ActivatedRoute, private searchprofileService: SearchprofileService, private searchreposService: SearchreposService, private starrepoService: StarrepoService) { }
 

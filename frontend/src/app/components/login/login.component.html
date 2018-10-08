@@ -1,7 +1,12 @@
-<app-navbar></app-navbar>
+ <!-- <app-navbar></app-navbar> -->
+
+
+   
+<div *ngIf="signupFlag">
 <mat-card class="login">
   <mat-card-header>
-    <mat-card-title>Login Via GitHub</mat-card-title>
+      <mat-card-title><i class="fab fa-github"></i></mat-card-title>
+    <mat-card-title class="name"> GitHub</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <div id="login-form-block">
@@ -23,7 +28,11 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button (click)="login()" color="primary">Login</button>
+    <button mat-raised-button (click)="signup()" color="primary">Signup</button>
+    
   </mat-card-actions>
 </mat-card>
+</div>
+<app-signup [signupFlag]="signupFlag" (signupflagValueChanged)="signupflagValueChanged($event)" *ngIf="!signupFlag"></app-signup>
 
-<div>{{auth_token}}</div>
+

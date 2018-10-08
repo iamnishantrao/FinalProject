@@ -20,8 +20,10 @@ export class LoginComponent implements OnInit {
   loginModel: LoginModel;
   loginCallback: any;
   auth_token: string;
+  signupFlag: boolean;
 
   ngOnInit() {
+    this.signupFlag = true;
   }
   login(): void {
     this.loginModel =
@@ -31,24 +33,20 @@ export class LoginComponent implements OnInit {
       };
     this.loginService.doLogin(this.loginModel).subscribe(data => {
       if (data == "true") {
-        //this.auth_token = tokenGetter();
         this.flagLogin = !this.flagLogin;
         this.flagValueChanged.emit(this.flagLogin);
       }
 
     }, error => { alert("Invalid Credentials") });
+  }
+  signup()
+  {
+    this.signupFlag = !this.signupFlag;
+  }
+  signupflagValueChanged(e)
+  {
+    this.signupFlag = e;
+  }
+  
 
-    // if (this.username == 'admin' && this.password == 'admin') {
-    //   this.flagLogin = !this.flagLogin;
-    //   this.flagValueChanged.emit(this.flagLogin);
-    // } else {
-    //   alert("Invalid Credential");
-    // }
-  }
-  about(): void {
-    alert("About Information")
-  }
-  contact(): void {
-    alert("Contact Information")
-  }
 }

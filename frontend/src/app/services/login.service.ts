@@ -17,6 +17,7 @@ export class LoginService {
     return this.http.post<LoginCallbackModel>(url, loginData).pipe(
       map(response => {
         localStorage.setItem('access_token', response.auth_token);
+        localStorage.setItem('user_name', response.user_name);
         return "true";
       }),
       catchError(error => {

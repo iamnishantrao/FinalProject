@@ -16,10 +16,12 @@ namespace GithubDashboard.Controllers
     [ApiController]
     public class PullController : ControllerBase
     {
-        [HttpGet]
-        public IEnumerable<Pull> Get()
+        [HttpGet("{id}")]
+        public IEnumerable<Pull> Get([FromRoute] string id)
         {
-            string url = "https://api.github.com/repos/jupyterlab/jupyterlab/pulls";
+            var str = id.Split(" ");
+            //string url = "https://api.github.com/repos/jupyterlab/jupyterlab/pulls";
+            string url = "https://api.github.com/repos/" + str[0] + "/" + str[1] + "/pulls";
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.UserAgent = "Nisant Yadav";

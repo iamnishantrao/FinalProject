@@ -1,0 +1,9 @@
+mat-list-item {
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+button {
+    background: lightblue;
+    border-radius: 10px;
+}

@@ -16,10 +16,10 @@ namespace GithubDashboard.Controllers
     [ApiController]
     public class ProfileController : ControllerBase
     {
-        [HttpGet]
-        public Profile Get()
+        [HttpGet("{id}")]
+        public Profile Get([FromRoute] string id)
         {
-            string url = "https://api.github.com/users/jupyterlab";
+            string url = "https://api.github.com/users/"+id;
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.UserAgent = "Nisant Yadav";

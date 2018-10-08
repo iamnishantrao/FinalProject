@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit {
   logmeout()
   {
     localStorage.removeItem('access_token');
+    localStorage.removeItem('user_name');
     this.flagLogin = !this.flagLogin;
     this.flagValueChanged.emit(this.flagLogin);
   }

@@ -1,6 +1,4 @@
-.spacer {
-    flex: 1 1 auto;
-}
+
 
 mat-card {
     margin: auto;
@@ -10,4 +8,11 @@ mat-card {
 }
 mat-card-header{
     justify-content: center;
+}
+i{
+    font-size: 60px;
+
+}
+.name{
+    font-size: 20px;
 }
