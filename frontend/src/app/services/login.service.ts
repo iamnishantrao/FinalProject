@@ -14,7 +14,6 @@ export class LoginService {
 
   doLogin(loginData: LoginModel): Observable<string> {
     var url = "https://localhost:44357/api/authentication/login";
-    console.log(loginData);
     return this.http.post<LoginCallbackModel>(url, loginData).pipe(
       map(response => {
         localStorage.setItem('access_token', response.auth_token);

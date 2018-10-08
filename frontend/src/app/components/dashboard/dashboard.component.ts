@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
   constructor(private router: Router) { }
  
   ngOnInit() {
-     this.auth_token = tokenGetter();
+    //  this.auth_token = tokenGetter();
   }
   openProfile()
   {

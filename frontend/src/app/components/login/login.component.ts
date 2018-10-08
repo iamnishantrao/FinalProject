@@ -51,5 +51,4 @@ export class LoginComponent implements OnInit {
   contact(): void {
     alert("Contact Information")
   }
-
 }

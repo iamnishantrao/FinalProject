@@ -31,30 +31,5 @@ namespace GithubDashboard.Controllers
             IEnumerable<Repos> repositories = JsonConvert.DeserializeObject<IEnumerable<Repos>>(json);
             return repositories;
         }
-
-        //// GET: api/Repo/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-
-        //// POST: api/Repo
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
-
-        //// PUT: api/Repo/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
-
-        //// DELETE: api/ApiWithActions/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }

@@ -12,7 +12,16 @@ namespace GithubDashboard.Controllers
 
     public class RepoBinder
     {
-        public StarredRepositories starredRepositories { get; set; }
+        public int Repo_id { get; set; }
+        public string name { get; set; }
+        public string html_url { get; set; }
+        public string description { get; set; }
+        public DateTime created_at { get; set; }
+        public DateTime updated_at { get; set; }
+        public DateTime pushed_at { get; set; }
+        public string clone_url { get; set; }
+        public string user_login { get; set; }
+        public string user_html_url { get; set; }
         public int User_id { get; set; }
     }
     [Route("api/starredrepos")]
@@ -60,14 +69,26 @@ namespace GithubDashboard.Controllers
             {
                 return BadRequest(ModelState);
             }
-            _context.StarredRepositories.Add(repo.starredRepositories);
+            StarredRepositories starredRepositories = new StarredRepositories();
+            starredRepositories.Repo_id = repo.Repo_id;
+            starredRepositories.name = repo.name;
+            starredRepositories.html_url = repo.html_url;
+            starredRepositories.description = repo.description;
+            starredRepositories.created_at = repo.created_at;
+            starredRepositories.updated_at = repo.updated_at;
+            starredRepositories.pushed_at = repo.pushed_at;
+            starredRepositories.clone_url = repo.clone_url;
+            starredRepositories.user_login = repo.user_login;
+            starredRepositories.user_html_url = repo.user_html_url;
+            _context.StarredRepositories.Add(starredRepositories);
+
             UserRepos userRepos = new UserRepos();
-            userRepos.UserId = repo.User_id;
-            userRepos.StarredRepositoriesId = repo.starredRepositories.StarredRepositoriesId;
-            _context.UserRepos.Add(userRepos);
+            userRepos.UserId = 1;
+            userRepos.StarredRepositoriesId = starredRepositories.StarredRepositoriesId;
+            await _context.UserRepos.AddAsync(userRepos);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetStarredRepositories", 1);
+            return Ok(1);
         }
     }
 }

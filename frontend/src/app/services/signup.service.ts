@@ -14,7 +14,7 @@ export class SignupService {
   doSignup(signupModel:SignupModel): Observable<object>
   {
     var url = "https://localhost:44357/api/signup";
-    var x =this.http.post(url, signupModel);
+    var x = this.http.post(url, signupModel);
     
     return x;
   }

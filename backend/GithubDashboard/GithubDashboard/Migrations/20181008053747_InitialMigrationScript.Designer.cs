@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GithubDashboard.Migrations
 {
     [DbContext(typeof(GithubDashboardContext))]
-    [Migration("20181006184601_InitialMigrationScript")]
+    [Migration("20181008053747_InitialMigrationScript")]
     partial class InitialMigrationScript
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

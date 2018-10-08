@@ -35,7 +35,7 @@ namespace GithubDashboard.Models
             }
 
             //Try to parse the provided value into the desired model
-            var model = JsonConvert.DeserializeObject<Issue>(json);
+            var model = JsonConvert.DeserializeObject<Repos>(json);
 
             //Model will be null if unable to desrialize.
             if (model == null)

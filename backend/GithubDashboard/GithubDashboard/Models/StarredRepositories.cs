@@ -9,7 +9,7 @@ namespace GithubDashboard.Models
     public class StarredRepositories
     {
         public int StarredRepositoriesId { get; set; }
-        public int id { get; set; }
+        public int Repo_id { get; set; }
         public string name { get; set; }
         public string html_url { get; set; }
         public string description { get; set; }

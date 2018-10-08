@@ -67,13 +67,10 @@ namespace GithubDashboard
             //CORS Configuration
             services.AddCors(options => options.AddPolicy("Cors", builder =>
             {
-                builder
-                .AllowAnyOrigin()
+                builder.AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader();
             }));
-
-
 
             // Configure JwtIssuerOptions
             var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
